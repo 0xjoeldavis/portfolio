@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
-import { ArrowUpRight, Briefcase, Github, Linkedin, Send } from "lucide-react";
+import { ArrowUpRight, Github, Send } from "lucide-react";
 //#region src/lib/i18n/translations.ts
 var translations = {
 	en: {
@@ -16,21 +16,21 @@ var translations = {
 		"hero.tag2": "AI ENGINEER",
 		"hero.tag3": "EST. 2021",
 		"hero.tag4": "REMOTE / WORLDWIDE",
-		"hero.tagline": "shipping fullstack web systems, fast.",
+		"hero.tagline": "Senior Full Stack Engineer",
 		"hero.cta1": "view_work()",
 		"hero.cta2": "contact_me()",
 		"about.kicker": "// 01",
-		"about.title": "about",
+		"about.title": "About Me",
 		"about.note": "A short transmission about who you're hiring.",
-		"about.p1": "I'm a fullstack developer (React, Next.js, Node, TypeScript) who spends most days at the intersection of product and AI — wiring Claude, GPT and custom agents into real, shippable web apps.",
-		"about.p2": "I take projects from a half-formed idea to deployed product: architecture, frontend, backend, infra, the boring CI/CD glue. I write clean TypeScript, ship fast, and obsess about the parts users actually feel.",
-		"about.p3": "For 5+ years on Upwork I've worked with founders, agencies and product teams across the US and EU — usually on AI-heavy SaaS, internal tools and dashboards.",
+		"about.p1": "I'm a fullstack Engineer(React, Next.js, Node, TypeScript, Python) who spends most days at the intersection of product and AI — wiring Claude, GPT and custom agents into real, shippable web apps",
+		"about.p2": "I take projects from a half-formed idea to deployed product: architecture, frontend, backend, infra, the boring CI/CD glue. I write clean TypeScript, ship fast, and obsess about the parts users actually feel",
+		"about.p3": "For 10+ years I've worked with founders, agencies and product teams across the US and EU — usually on AI-heavy SaaS, internal tools and dashboards",
 		"about.stat1": "YEARS BUILDING",
 		"about.stat2": "PROJECTS SHIPPED",
 		"about.stat3": "AI APPS LAUNCHED",
 		"about.stat4": "JOB SUCCESS",
 		"stack.kicker": "// 02",
-		"stack.title": "stack",
+		"stack.title": "MY STACK",
 		"stack.note": "The tools I reach for. Pick a category to filter.",
 		"stack.all": "ALL",
 		"stack.frontend": "FRONTEND",
@@ -39,30 +39,30 @@ var translations = {
 		"stack.infra": "INFRA / DEVOPS",
 		"stack.tooling": "TOOLING",
 		"work.kicker": "// 03",
-		"work.title": "selected work",
+		"work.title": "SELECTED WORK",
 		"work.note": "Recent shipped projects. Most are NDA — high-level only.",
 		"exp.kicker": "// 04",
-		"exp.title": "experience",
+		"exp.title": "Experience",
 		"exp.note": "How I got here, what I'm doing.",
 		"exp.work": "WORK",
 		"exp.learning": "LEARNING",
 		"rev.kicker": "// 05",
-		"rev.title": "client reviews",
+		"rev.title": "Client Reviews",
 		"rev.note": "Pulled from Upwork. Rendered as a code review, because of course.",
 		"now.kicker": "// 06",
-		"now.title": "now",
+		"now.title": "NOW",
 		"now.note": "A live snapshot of what's on my desk this week.",
 		"now.heading": "Currently working on",
 		"now.local": "LOCAL TIME",
 		"now.hours": "Working hours · 09:00 — 21:00",
 		"contact.kicker": "// 07",
-		"contact.title": "contact",
+		"contact.title": "CONTACT",
 		"contact.note": "I read every message. Reply within 24h.",
 		"contact.h1": "LET'S BUILD",
 		"contact.h2": "SOMETHING",
 		"contact.h3": "WORTH SHIPPING.",
 		"contact.body": "Got an AI product idea, a stuck React codebase, or just want a second opinion? Drop me a line — or ask the assistant on the right anything you'd ask in a screening call.",
-		"footer.line": "DESIGNED & CODED BY JERIMY — 2026",
+		"footer.line": "DESIGNED & CODED BY Riku — 2026",
 		"footer.tag1": "NO COOKIES",
 		"footer.tag2": "NO TRACKERS",
 		"footer.tag3": "JUST CODE"
@@ -126,7 +126,7 @@ var translations = {
 		"contact.h2": "ЩОСЬ ВАРТЕ",
 		"contact.h3": "ВІДПРАВКИ.",
 		"contact.body": "Маєте ідею AI-продукту, завислу React-кодбазу, або потрібна друга думка? Напишіть — або запитайте асистента справа все, що питали б на скринінгу.",
-		"footer.line": "ДИЗАЙН І КОД ВІД JERIMY — 2026",
+		"footer.line": "ДИЗАЙН І КОД ВІД Riku — 2026",
 		"footer.tag1": "БЕЗ COOKIES",
 		"footer.tag2": "БЕЗ ТРЕКЕРІВ",
 		"footer.tag3": "ЛИШЕ КОД"
@@ -168,7 +168,7 @@ function Header() {
 						/* @__PURE__ */ jsx("span", { className: "inline-block size-2.5 bg-accent" }),
 						/* @__PURE__ */ jsx("span", {
 							className: "font-semibold tracking-wider text-foreground",
-							children: "JERIMY.SYS"
+							children: "Riku.SYS"
 						}),
 						/* @__PURE__ */ jsx("span", {
 							className: "text-muted",
@@ -235,17 +235,17 @@ function Terminal() {
 				}),
 				/* @__PURE__ */ jsx("span", {
 					className: "text-[11px]",
-					children: "~/jerimy/portfolio · zsh · 10:56:54"
+					children: "~/Riku/portfolio · zsh · 10:56:54"
 				}),
 				/* @__PURE__ */ jsx("span", {})
 			]
 		}), /* @__PURE__ */ jsxs("pre", {
 			className: "overflow-auto px-5 py-4 font-mono text-foreground/90",
-			children: [`jerimy@dev ~ $ whoami
-→ Jerimy "J" Reyes
+			children: [`Riku@dev ~ $ whoami
+→ Riku "J" Cruz
 → Fullstack + AI Engineer
 
-jerimy@dev ~ $ cat ./mission.json
+Riku@dev ~ $ cat ./mission.json
 {
   "build":    "AI-native web apps",
   "speed":    "idea → prod, fast",
@@ -254,7 +254,7 @@ jerimy@dev ~ $ cat ./mission.json
   "available": true
 }
 
-jerimy@dev ~ $ ./say_hi.sh`, /* @__PURE__ */ jsx("span", { className: "ml-0.5 inline-block size-2 translate-y-[1px] bg-accent blink" })]
+Riku@dev ~ $ ./say_hi.sh`, /* @__PURE__ */ jsx("span", { className: "ml-0.5 inline-block size-2 translate-y-[1px] bg-accent blink" })]
 		})]
 	});
 }
@@ -269,7 +269,7 @@ function PhotoCard() {
 			}), /* @__PURE__ */ jsx("dl", {
 				className: "flex-1 space-y-1 text-xs",
 				children: [
-					["HUMAN", "Jerimy Reyes"],
+					["HUMAN", "Riku Kato"],
 					["LOC", "Earth · Remote"],
 					["TZ", "UTC+3"],
 					["STATUS", "online"]
@@ -318,10 +318,10 @@ function Hero() {
 						className: "font-display text-[clamp(64px,11vw,180px)] font-bold leading-[0.88] tracking-tight",
 						children: [/* @__PURE__ */ jsx("span", {
 							className: "block text-foreground/85",
-							children: "JERIMY"
+							children: "Riku"
 						}), /* @__PURE__ */ jsx("span", {
 							className: "block text-accent",
-							children: "REYES"
+							children: "Kato"
 						})]
 					}),
 					/* @__PURE__ */ jsx("div", { className: "mt-12 h-2 w-20 bg-accent" }),
@@ -895,7 +895,7 @@ function Work() {
 							p.tags.map((t, j) => /* @__PURE__ */ jsxs("span", {
 								className: "flex items-center gap-2",
 								children: [
-									/* @__PURE__ */ jsx("span", { className: "size-1.5 rounded-full bg-accent" }),
+									/* @__PURE__ */ jsx("span", { className: "size-1.5 rounded-full bg-accent text-accent" }),
 									t,
 									j < p.tags.length - 1 && /* @__PURE__ */ jsx("span", {
 										className: "text-muted",
@@ -904,13 +904,16 @@ function Work() {
 								]
 							}, j)),
 							/* @__PURE__ */ jsx("span", {
-								className: "text-muted",
+								className: "text-muted text-accent",
 								children: "·"
 							}),
-							/* @__PURE__ */ jsx("span", { children: p.year })
+							/* @__PURE__ */ jsx("span", {
+								className: "text-accent",
+								children: p.year
+							})
 						]
 					}), /* @__PURE__ */ jsx("h3", {
-						className: "font-display text-2xl font-semibold leading-tight " + (i === 0 ? "text-accent" : "text-foreground"),
+						className: "font-display text-2xl font-semibold leading-tight",
 						children: p.title
 					})] }),
 					/* @__PURE__ */ jsxs("div", {
@@ -1114,17 +1117,17 @@ var reviews = [
 	{
 		file: "~/upwork/review_002.md",
 		project: "Web App Development",
-		text: "Jerimy is absolutely fantastic to work with. His work is great, the web app he built completely fit the specification. Super responsive with any issues."
+		text: "Riku is absolutely fantastic to work with. His work is great, the web app he built completely fit the specification. Super responsive with any issues."
 	},
 	{
 		file: "~/upwork/review_003.md",
 		project: "SaaS Project Follow Up",
-		text: "It was great to work with Jerimy again. He is solution oriented and easy to communicate."
+		text: "It was great to work with Riku again. He is solution oriented and easy to communicate."
 	},
 	{
 		file: "~/upwork/review_004.md",
 		project: "Music Chat User Interface",
-		text: "Jerimy built a fantastic front end interface for our platform, would highly recommend!"
+		text: "Riku built a fantastic front end interface for our platform, would highly recommend!"
 	},
 	{
 		file: "~/upwork/review_005.md",
@@ -1134,7 +1137,7 @@ var reviews = [
 	{
 		file: "~/upwork/review_006.md",
 		project: "Frontend Codebase Improvement",
-		text: "Jerimy fixed our messy codebase in a blink of an eye. We have hired him to improve the frontend of our app and he has been doing so ever since."
+		text: "Riku fixed our messy codebase in a blink of an eye. We have hired him to improve the frontend of our app and he has been doing so ever since."
 	}
 ];
 function Reviews() {
@@ -1341,40 +1344,28 @@ function Now() {
 }
 //#endregion
 //#region src/components/site/Contact.tsx
-var links = [
-	{
-		label: "UPWORK",
-		value: "Top Rated · ~01199c1e86f23068ea",
-		Icon: Briefcase
-	},
-	{
-		label: "LINKEDIN",
-		value: "/in/jerimy-reyes",
-		Icon: Linkedin
-	},
-	{
-		label: "GITHUB",
-		value: "/jerimy-reyes",
-		Icon: Github
-	},
-	{
-		label: "TELEGRAM",
-		value: "@jerimyreyes",
-		Icon: Send
-	}
-];
+var links = [{
+	label: "GITHUB",
+	value: "/0xjoeldavis",
+	Icon: Github
+}, {
+	label: "Gmail",
+	value: "rikukato001@gmail.com",
+	Icon: Send
+}];
 var prompts = [
 	"What's your AI stack?",
 	"Are you available now?",
 	"Show me an AI project",
-	"Hourly rate?"
+	"Hourly rate?",
+	"How many years of experience do you have?"
 ];
 function Contact() {
 	const { t } = useI18n();
 	const [input, setInput] = useState("");
 	const [msgs, setMsgs] = useState([{
 		role: "ai",
-		text: "Hi 👋 I'm an AI trained on Jerimy's portfolio. Ask me about his stack, projects, AI experience, availability — anything."
+		text: "Hi 👋 I'm an AI trained on Riku's portfolio. Ask me about his stack, projects, AI experience, availability — anything."
 	}]);
 	const send = (text) => {
 		if (!text.trim()) return;
@@ -1386,7 +1377,7 @@ function Contact() {
 			},
 			{
 				role: "ai",
-				text: "Thanks — Jerimy will follow up directly. For an instant answer, ping him on Telegram @jerimyreyes."
+				text: "Thanks — Riku will follow up directly. For an instant answer, ping him on Telegram @Akane."
 			}
 		]);
 		setInput("");
@@ -1453,7 +1444,7 @@ function Contact() {
 						className: "flex items-center gap-2 border-b border-border px-4 py-3 text-sm",
 						children: [/* @__PURE__ */ jsx("span", { className: "size-2 rounded-full bg-water" }), /* @__PURE__ */ jsx("span", {
 							className: "tracking-wider text-foreground",
-							children: "ASK_JERIMY.AI"
+							children: "ASK_Riku.AI"
 						})]
 					}),
 					/* @__PURE__ */ jsx("div", {
@@ -1462,7 +1453,7 @@ function Contact() {
 							className: m.role === "ai" ? "text-foreground/90" : "text-accent",
 							children: [/* @__PURE__ */ jsx("span", {
 								className: "text-accent",
-								children: m.role === "ai" ? "jerimy.ai" : "you"
+								children: m.role === "ai" ? "Riku.ai" : "you"
 							}), /* @__PURE__ */ jsxs("div", {
 								className: "mt-1",
 								children: [m.role === "ai" ? "> " : "", m.text]
@@ -1483,7 +1474,7 @@ function Contact() {
 							}), /* @__PURE__ */ jsx("input", {
 								value: input,
 								onChange: (e) => setInput(e.target.value),
-								placeholder: "Ask anything about Jerimy…",
+								placeholder: "Ask anything about Riku…",
 								className: "flex-1 bg-transparent outline-none placeholder:text-muted-foreground"
 							})]
 						}), /* @__PURE__ */ jsx("div", {

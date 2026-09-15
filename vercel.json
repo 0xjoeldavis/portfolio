@@ -1,0 +1,15 @@
+// filepath: vercel.json
+{
+    "builds": [
+      {
+        "src": "src/start.ts",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/src/start.ts"
+      }
+    ]
+  }

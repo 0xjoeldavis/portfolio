@@ -96,10 +96,10 @@ var Route$1 = createRootRouteWithContext()({
 				name: "viewport",
 				content: "width=device-width, initial-scale=1"
 			},
-			{ title: "Jerimy Reyes — Fullstack + AI Engineer" },
+			{ title: "Riku Kato — Fullstack + AI Engineer" },
 			{
 				name: "description",
-				content: "Portfolio of Jerimy Reyes — fullstack web systems and AI-native apps."
+				content: "Portfolio of Riku Kato — fullstack web systems and AI-native apps."
 			},
 			{
 				property: "og:type",
@@ -150,19 +150,19 @@ function RootComponent() {
 }
 //#endregion
 //#region src/routes/index.tsx
-var $$splitComponentImporter = () => import("./routes-DJDG90pX.js");
+var $$splitComponentImporter = () => import("./routes-lEUhmdMB.js");
 //#endregion
 //#region src/routeTree.gen.ts
 var rootRouteChildren = { IndexRoute: createFileRoute("/")({
 	head: () => ({ meta: [
-		{ title: "Jerimy Reyes — Fullstack + AI Engineer" },
+		{ title: "Riku Kato — Fullstack + AI Engineer" },
 		{
 			name: "description",
-			content: "Portfolio of Jerimy Reyes — fullstack web systems and AI-native apps. React, Next.js, Node, Claude, GPT."
+			content: "Portfolio of Riku Kato — fullstack web systems and AI-native apps. React, Next.js, Node, Claude, GPT."
 		},
 		{
 			property: "og:title",
-			content: "Jerimy Reyes — Fullstack + AI Engineer"
+			content: "Riku Kato — Fullstack + AI Engineer"
 		},
 		{
 			property: "og:description",
