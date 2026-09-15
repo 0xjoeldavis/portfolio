@@ -1,4 +1,3 @@
-// filepath: vercel.json
 {
     "builds": [
       {
