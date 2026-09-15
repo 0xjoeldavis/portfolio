@@ -1,0 +1,123 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-water: var(--water);
+  --color-water-glow: var(--water-glow);
+  --color-primary: var(--accent);
+  --color-primary-foreground: var(--accent-foreground);
+}
+
+:root {
+  --background: oklch(0.16 0.012 250);
+  --foreground: oklch(0.96 0.005 250);
+  --surface: oklch(0.19 0.013 250);
+  --surface-2: oklch(0.22 0.014 250);
+  --border: oklch(0.32 0.015 250);
+  --muted: oklch(0.5 0.02 250);
+  --muted-foreground: oklch(0.62 0.018 250);
+  --accent: oklch(0.9 0.22 130);
+  --accent-foreground: oklch(0.16 0.012 250);
+  --water: oklch(0.75 0.18 235);
+  --water-glow: oklch(0.85 0.18 220);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html, body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-mono);
+    font-feature-settings: "ss01", "cv11";
+  }
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-foreground);
+  }
+}
+
+/* Hover-grow + water stream border */
+@utility card-water {
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  isolation: isolate;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: conic-gradient(
+      from var(--angle, 0deg),
+      transparent 0%,
+      transparent 60%,
+      oklch(0.88 0.22 130) 75%,
+      oklch(0.9 0.25 132) 85%,
+      oklch(0.96 0.18 128) 92%,
+      transparent 100%
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  &:hover {
+    transform: scale(1.015);
+  }
+  &:hover::before {
+    opacity: 1;
+    animation: water-stream 4s linear infinite;
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes water-stream {
+  to { --angle: 360deg; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes cursor-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@utility marquee-track {
+  animation: marquee 40s linear infinite;
+}
+
+@utility blink {
+  animation: cursor-blink 1s steps(1) infinite;
+}
